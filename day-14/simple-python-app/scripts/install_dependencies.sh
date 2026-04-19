@@ -34,7 +34,8 @@ if [ -f requirements.txt ]; then
     pip3 install -r requirements.txt
 else
     echo "No requirements.txt found, installing Flask directly..."
-    pip3 install flask
+    # Pinning to a specific version for reproducibility
+    pip3 install flask==2.3.3
 fi
 
 echo "Dependency installation completed successfully."
