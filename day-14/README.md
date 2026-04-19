@@ -42,6 +42,6 @@ In this step, we'll configure AWS CodeBuild to build our Python application base
 - Select the pipeline you created in the previous step.
 - Configure the build environment, such as the operating system, runtime, and compute resources required for your Python application.
 - Specify the build commands, such as installing dependencies and running tests. Customize this based on your application's requirements.
-- Set up the artifacts configuration to store the build output, typically in an S3 bucket.
+- Set up the artifacts configuration to define where CodeBuild should store the build output.
 
-> **Personal Note:** I found it helpful to use `Amazon Linux 2` as the build environment OS with the `aws/codebuild/amazonlinux2-x86_64-standard:4.0` image when working with Python 3.11. Also, make sure your `buildspec.yml` is in the root of the repository to avoid "buildspec not found" errors.
+> **Personal note:** I found it helpful to use `Amazon Linux 2` as the build environment OS with the `aws/codebuild/amazonlinux2-x86_64-standard:4.0` image when working with Python 3.11. Make sure to check the [CodeBuild runtime versions](https://docs.aws.amazon.com/codebuild/latest/userguide/available-runtimes.html) page to confirm the latest supported runtimes.
