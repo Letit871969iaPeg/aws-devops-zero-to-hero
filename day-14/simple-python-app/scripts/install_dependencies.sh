@@ -19,6 +19,8 @@ if ! command -v docker &> /dev/null; then
     apt-get install -y docker.io
     systemctl start docker
     systemctl enable docker
+    # Add ubuntu user to docker group so we can run docker without sudo
+    usermod -aG docker ubuntu
 else
     echo "Docker is already installed."
 fi
